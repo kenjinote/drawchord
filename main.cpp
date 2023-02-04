@@ -5,13 +5,14 @@ CHAR szClassName[]="window";
 
 LRESULT CALLBACK WndProc(HWND hWnd,UINT msg,WPARAM wParam,LPARAM lParam)
 {
-	PAINTSTRUCT ps;
-	HDC hdc;
     switch (msg){
 		case WM_PAINT:
-			hdc=BeginPaint(hWnd,&ps);
-			Chord(hdc,0,0,300,200,50,50,400,100);
-			EndPaint(hWnd,&ps);
+			{
+				PAINTSTRUCT ps;
+				HDC hdc=BeginPaint(hWnd,&ps);
+				Chord(hdc,0,0,300,200,50,50,400,100);
+				EndPaint(hWnd,&ps);
+			}
 			break;
         case WM_DESTROY:
             PostQuitMessage(0);
